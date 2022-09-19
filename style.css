@@ -218,6 +218,7 @@ img {
   grid-template-areas:
     "projects announcements"
     "projects trending";
+  margin-left: 20px;
 }
 
 .content h3 {
