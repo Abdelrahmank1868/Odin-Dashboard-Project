@@ -13,10 +13,10 @@
   --nav-color-2: #62daff6e;
   --blue-1: #084c61;
   --gh-avatar: url("https://github.com/Abdelrahmank1868.png");
-  --gh-avatar2: url("https://github.com/Ahmed.png");
-  --gh-avatar3: url("https://github.com/Mohammed.png");
-  --gh-avatar4: url("https://github.com/Yusuf.png");
-  --gh-avatar5: url("https://github.com/Ramzi.png");
+  --gh-avatar2: url("https://github.com/Abdelrahmank1868.png");
+  --gh-avatar3: url("https://github.com/Abdelrahmank1868.png");
+  --gh-avatar4: url("https://github.com/Abdelrahmank1868.png");
+  --gh-avatar5: url("https://github.com/Abdelrahmank1868.png");
   --content-gray: rgb(235, 235, 235);
   --transition-notDrawer: margin-left 0.4s ease-in;
   --transition-drawer: width 0.4s ease-in;
@@ -30,17 +30,10 @@ body {
     "drawer nav nav nav"
     "drawer content content content";
   grid-template-rows: 0.6fr 4fr;
-  grid-template-columns: 5rem, 1fr 1fr 1fr;
-}
-
-img {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+  grid-template-columns: 5rem 1fr 1fr 1fr;
 }
 
 .drawer {
-  grid-area: drawer;
   background-color: var(--drawer-color);
   width: 5rem;
   position: fixed;
@@ -55,11 +48,11 @@ img {
 
 .menuItem > h1 {
   display: none;
-  margin-left: 5%;
+  margin-left: 2rem;
 }
 
 .drawer:hover > .menuItem > h1 {
-  display: inline;
+  display: flex;
 }
 
 .drawer:hover ~ .navbar,
@@ -74,18 +67,20 @@ img {
   align-items: center;
   justify-content: flex-start;
 }
-
 .menuItem > * {
   cursor: pointer;
 }
 
-.drawer > div:not(:first-child) > * {
-  padding: 1vw 0.1vw 0.1vw 0vw;
-  font-size: calc(20px 0.2vw);
-  padding-left: 20px;
+a {
+  text-decoration: none;
 }
 
-.drawer > div:not(:first-child) > img {
+.drawer > *:not(:first-child) > * {
+  padding: 1rem 0.5rem 0.5rem 1rem;
+  font-size: 22px;
+  padding-left: 20px;
+}
+.drawer > *:not(:first-child) > img {
   width: calc(20px + 0.5vw);
   height: calc(20px + 0.5vw);
 }
@@ -97,7 +92,6 @@ img {
 .dashboard {
   font-size: clamp(12px, calc(25px + 0.9vw), 50px);
 }
-
 .dashboard img {
   display: flex;
   align-items: center;
@@ -107,14 +101,15 @@ img {
   padding-left: 10px;
   padding-top: 10px;
 }
-
-/* Navbar styling */
+/* Navbar Styling */
 .navbar {
   grid-area: nav;
   transition: var(--transition-notDrawer);
   background-color: var(--nav-bg-1);
   padding: 1.5rem 3rem;
   border-bottom: 2px solid rgb(219, 219, 219);
+  position: sticky;
+  top: 0;
 }
 
 .topNav {
@@ -156,9 +151,15 @@ img {
 }
 
 .account .gh-avatar {
-  margin: 0 1rem 0 2.5 rem;
+  margin: 0 1rem 0 2.5rem;
   height: 40px;
   width: 40px;
+}
+
+img {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
 }
 
 .bottom {
@@ -172,7 +173,6 @@ img {
   align-items: center;
   gap: 1rem;
 }
-
 .profile .gh-avatar {
   width: 75px;
   height: 75px;
@@ -187,10 +187,10 @@ img {
   font-size: 1.6rem;
   font-weight: 800;
 }
-
 .buttons {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -206,6 +206,7 @@ img {
 }
 
 /* Main Content */
+
 .content {
   grid-area: content;
   transition: var(--transition-notDrawer);
@@ -218,7 +219,6 @@ img {
   grid-template-areas:
     "projects announcements"
     "projects trending";
-  margin-left: 20px;
 }
 
 .content h3 {
@@ -231,7 +231,8 @@ img {
   background-color: rgba(45, 187, 187, 0.459);
   padding: 2rem;
   border-radius: 0.6rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
+  max-width: 30vw;
 }
 
 .projects {
@@ -252,13 +253,11 @@ img {
   display: flex;
   flex-direction: column;
 }
-
 .projects .card-title {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
-
 .projects .card-text {
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -329,12 +328,10 @@ img {
 .trend + .trend {
   margin-top: 1.5rem;
 }
-
 .trend .account {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   font-size: 0.9rem;
 }
 
@@ -343,29 +340,27 @@ img {
   margin-bottom: 0.15rem;
 }
 
-.trend-1 .gh-avatar {
+.trend-1 .gh-avatar2 {
   background: var(--gh-avatar2) center center / cover no-repeat;
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
-
-.trend-2 .gh-avatar2 {
+.trend-2 .gh-avatar {
+  background: var(--gh-avatar) center center / cover no-repeat;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.trend-3 .gh-avatar3 {
   background: var(--gh-avatar3) center center / cover no-repeat;
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
 
-.trend-3 .gh-avatar3 {
-  background: var(--gh-avatar4) center center / cover no-repeat;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
 .trend-4 .gh-avatar4 {
-  background: var(--gh-avatar5) center center / cover no-repeat;
+  background: var(--gh-avatar4) center center / cover no-repeat;
   border-radius: 50%;
   width: 40px;
   height: 40px;
